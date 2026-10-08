@@ -1,0 +1,1593 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Akash Fasate Portfolio</title>
+    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              heading: ["Plus Jakarta Sans", "sans-serif"],
+            },
+            colors: {
+              brand: {
+                50: "#eff6ff",
+                100: "#dbeafe",
+                200: "#bfdbfe",
+                300: "#93c5fd",
+                400: "#60a5fa",
+                500: "#3b82f6",
+                600: "#2563eb",
+                700: "#1d4ed8",
+                800: "#1e40af",
+                900: "#1e3a8a",
+              },
+            },
+            boxShadow: {
+              premium:
+                "0 10px 30px -10px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02)",
+              "premium-hover":
+                "0 20px 40px -15px rgba(37, 99, 235, 0.12), 0 1px 10px rgba(0, 0, 0, 0.03)",
+              glass:
+                "inset 0 1px 0 0 rgba(255, 255, 255, 0.6), 0 4px 20px rgba(0, 0, 0, 0.03)",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .glass-card {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+      .text-gradient {
+        background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .hero-pattern {
+        background-color: #ffffff;
+        background-image:
+          radial-gradient(#e2e8f0 1.5px, transparent 1.5px),
+          radial-gradient(#e2e8f0 1.5px, #ffffff 1.5px);
+        background-size: 40px 40px;
+        background-position:
+          0 0,
+          20px 20px;
+      }
+    </style>
+  </head>
+  <body class="bg-[#fcfdff] text-slate-800 antialiased font-sans">
+    <!-- Header / Navigation -->
+    <header
+      class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent bg-white/80 backdrop-blur-md"
+      id="main-header"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between"
+      >
+        <!-- Logo -->
+        <a href="#hero" class="flex items-center gap-2.5 group">
+          <div
+            class="w-10 h-10 rounded-xl bg-brand-600 flex items-center justify-center text-white font-heading font-extrabold text-xl shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform duration-300"
+          >
+            A
+          </div>
+          <div class="flex flex-col">
+            <span
+              class="font-heading font-bold text-slate-900 tracking-tight text-lg leading-tight"
+              >Akash Fasate</span
+            >
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center gap-8">
+          <a
+            href="#about"
+            class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors"
+            >About</a
+          >
+          <a
+            href="#skills"
+            class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors"
+            >Skills</a
+          >
+          <a
+            href="#experience"
+            class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors"
+            >Experience</a
+          >
+          <a
+            href="#achievements"
+            class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors"
+            >Achievements</a
+          >
+          <a
+            href="#contact"
+            class="px-5 py-2.5 rounded-lg bg-brand-600 text-white text-sm font-medium hover:bg-brand-700 transition-all shadow-md shadow-brand-500/10 hover:shadow-lg hover:shadow-brand-500/20"
+            >Contact</a
+          >
+        </nav>
+
+        <!-- Mobile Navigation Trigger -->
+        <button
+          class="md:hidden p-2 text-slate-700 hover:text-brand-600 transition-colors focus:outline-none"
+          id="mobile-menu-btn"
+          aria-label="Toggle Menu"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            id="menu-icon"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Drawer Menu -->
+      <div
+        class="hidden md:hidden absolute top-20 left-0 right-0 bg-white border-b border-slate-100 shadow-xl transition-all duration-300 transform origin-top"
+        id="mobile-menu"
+      >
+        <div class="flex flex-col p-6 gap-4">
+          <a
+            href="#about"
+            class="mobile-link text-slate-700 hover:text-brand-600 font-medium py-2 border-b border-slate-50"
+            >About</a
+          >
+          <a
+            href="#skills"
+            class="mobile-link text-slate-700 hover:text-brand-600 font-medium py-2 border-b border-slate-50"
+            >Skills</a
+          >
+          <a
+            href="#experience"
+            class="mobile-link text-slate-700 hover:text-brand-600 font-medium py-2 border-b border-slate-50"
+            >Experience</a
+          >
+          <a
+            href="#achievements"
+            class="mobile-link text-slate-700 hover:text-brand-600 font-medium py-2 border-b border-slate-50"
+            >Achievements</a
+          >
+          <a
+            href="#contact"
+            class="mobile-link text-center mt-2 px-5 py-3 rounded-lg bg-brand-600 text-white font-medium hover:bg-brand-700 transition-all"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="pt-20">
+      <!-- 1. Hero Section -->
+      <section
+        id="hero"
+        class="hero-pattern min-h-[calc(100vh-80px)] flex items-center relative py-16 md:py-24 border-b border-slate-100 overflow-hidden"
+      >
+        <!-- Decorative Accent Blur -->
+        <div
+          class="absolute -top-40 right-10 w-96 h-96 bg-brand-200/30 rounded-full blur-3xl -z-10 pointer-events-none"
+        ></div>
+        <div
+          class="absolute bottom-10 left-10 w-80 h-80 bg-brand-100/30 rounded-full blur-2xl -z-10 pointer-events-none"
+        ></div>
+
+        <div
+          class="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center"
+        >
+          <!-- Text Column -->
+          <div class="lg:col-span-7 flex flex-col items-start gap-6 text-left">
+            <!-- Experience Tag -->
+            <span
+              class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-50 border border-brand-100 text-xs font-semibold text-brand-700 tracking-wide uppercase"
+            >
+              <span
+                class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"
+              ></span>
+              2+ Years Professional Experience
+            </span>
+
+            <h1
+              class="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-slate-900 leading-tight"
+            >
+              Hi, I'm <span class="text-gradient">Akash Fasate</span>
+            </h1>
+
+            <h2
+              class="font-heading font-bold text-xl sm:text-2xl text-slate-700"
+            >
+              Java Full Stack Developer
+            </h2>
+
+            <div
+              class="flex flex-wrap items-center gap-4 text-sm text-slate-600"
+            >
+              <span>Location: Pune, Maharashtra, India</span>
+              <span class="hidden sm:inline text-slate-300">|</span>
+              <span>Email: akashfasate2001@gmail.com</span>
+              <span class="hidden sm:inline text-slate-300">|</span>
+              <span>Mobile: 8421605636</span>
+            </div>
+
+            <p
+              class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-xl"
+            >
+              Java Full Stack Developer with 2.5 years of experience in
+              developing scalable applications using Java, Spring Boot,
+              React.js, REST APIs, and SQL. Experienced in building responsive
+              user interfaces, developing RESTful backend services, database
+              integration, debugging, testing, and application performance
+              optimization. Strong understanding of SDLC and Agile methodologies
+              with proven ability to deliver reliable, maintainable, and
+              end-to-end software solutions.
+            </p>
+
+            <!-- CTAs -->
+            <div class="flex flex-wrap gap-4 mt-2 w-full sm:w-auto">
+              <a
+                href="#contact"
+                class="w-full sm:w-auto text-center px-8 py-4 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold transition-all duration-300 shadow-lg shadow-brand-500/20 hover:shadow-brand-500/35 hover:-translate-y-0.5"
+              >
+                Contact Me
+              </a>
+            </div>
+
+            <!-- Social Channels -->
+            <div
+              class="flex items-center gap-5 mt-6 border-t border-slate-100 pt-6 w-full"
+            >
+              <span
+                class="text-xs font-bold text-slate-400 tracking-wider uppercase"
+                >Find me on</span
+              >
+              <div class="flex items-center gap-4">
+                <!-- LinkedIn -->
+                <a
+                  href="https://www.linkedin.com/in/akash-fasate"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="p-2.5 rounded-lg bg-slate-50 hover:bg-brand-50 border border-slate-100 hover:border-brand-200 text-slate-500 hover:text-brand-600 transition-all duration-300"
+                  aria-label="LinkedIn"
+                >
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                    />
+                  </svg>
+                </a>
+                <!-- GitHub -->
+                <a
+                  href="https://github.com/AkashFasate2001"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="p-2.5 rounded-lg bg-slate-50 hover:bg-brand-50 border border-slate-100 hover:border-brand-200 text-slate-500 hover:text-slate-900 transition-all duration-300"
+                  aria-label="GitHub"
+                >
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.483 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.162 22 16.418 22 12c0-5.523-4.477-10-10-10z"
+                    />
+                  </svg>
+                </a>
+                <!-- LeetCode -->
+                <a
+                  href="https://leetcode.com/akashfasate/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="p-2.5 rounded-lg bg-slate-50 hover:bg-brand-50 border border-slate-100 hover:border-brand-200 text-slate-500 hover:text-amber-500 transition-all duration-300"
+                  aria-label="LeetCode"
+                >
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M13.483 0a1.374 1.374 0 00-.961.411L7.11 5.826a1.374 1.374 0 00-.011 1.942l.011.011a1.374 1.374 0 001.942-.011L13.483 3.3a.275.275 0 01.389 0l7.35 7.35a2.747 2.747 0 010 3.885l-4.502 4.502a.275.275 0 01-.389 0l-4.215-4.215a1.374 1.374 0 00-1.942 0l-.011.011a1.374 1.374 0 000 1.942l4.215 4.215a2.747 2.747 0 003.885 0l4.502-4.502a5.494 5.494 0 000-7.77l-7.35-7.35A1.374 1.374 0 0013.483 0zM4.145 10.377a2.747 2.747 0 00-3.885 0 2.747 2.747 0 000 3.885l4.502 4.502a1.374 1.374 0 001.942 0l.011-.011a1.374 1.374 0 000-1.942l-4.502-4.502a.275.275 0 010-.389z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Graphic/Photo Column -->
+          <div class="lg:col-span-5 flex justify-center relative">
+            <!-- Tech Ring / Blob Background -->
+            <div
+              class="absolute inset-0 bg-gradient-to-tr from-brand-100 to-brand-50 rounded-full blur-2xl opacity-70 -z-10 transform scale-95"
+            ></div>
+
+            <!-- Premium Framed Profile Placeholder -->
+            <div
+              class="relative w-72 h-72 sm:w-85 sm:h-85 lg:w-96 lg:h-96 rounded-2xl p-3 bg-white shadow-premium border border-slate-100 rotate-1 hover:rotate-0 transition-all duration-500"
+            >
+              <div
+                class="w-full h-full rounded-xl bg-slate-100 overflow-hidden relative group"
+              >
+                <!-- Profile image -->
+                <img
+                  src="assets/profileImage.png"
+                  alt="Akash Fasate profile"
+                  class="w-full h-full object-cover"
+                />
+                <!-- Live Status Indicator -->
+                <div
+                  class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md px-3.5 py-2.5 rounded-lg border border-slate-100 flex items-center gap-3 shadow-md"
+                >
+                  <span class="flex h-3 w-3 relative">
+                    <span
+                      class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"
+                    ></span>
+                    <span
+                      class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"
+                    ></span>
+                  </span>
+                  <div class="flex flex-col">
+                    <span class="text-xs font-bold text-slate-900 leading-none"
+                      >Available for Roles</span
+                    >
+                    <span class="text-[10px] text-slate-500 font-medium"
+                      >Java Full Stack Engineer</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. About Me Section -->
+      <section id="about" class="py-24 bg-white border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6">
+          <!-- Section Title -->
+          <div class="flex flex-col items-center text-center gap-2 mb-16">
+            <span
+              class="text-xs font-bold text-brand-600 tracking-widest uppercase"
+              >Professional Overview</span
+            >
+            <h2
+              class="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight"
+            >
+              About Me
+            </h2>
+            <div class="w-12 h-1 bg-brand-600 rounded mt-2"></div>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            <!-- Summary Card (Left) -->
+            <div class="lg:col-span-7 flex flex-col gap-6">
+              <div
+                class="glass-card p-8 rounded-2xl shadow-premium border border-slate-100 flex flex-col gap-5"
+              >
+                <h3 class="font-heading font-bold text-2xl text-slate-900">
+                  Professional Summary
+                </h3>
+                <p class="text-slate-600 leading-relaxed text-base">
+                  Java Full Stack Developer with 2.5 years of experience in
+                  developing scalable applications using Java, Spring Boot,
+                  React.js, REST APIs, and SQL. Experienced in building
+                  responsive user interfaces, developing RESTful backend
+                  services, database integration, debugging, testing, and
+                  application performance optimization.
+                </p>
+                <p class="text-slate-600 leading-relaxed text-base">
+                  Strong understanding of SDLC and Agile methodologies with
+                  proven ability to deliver reliable, maintainable, and
+                  end-to-end software solutions.
+                </p>
+                <!-- Current Info Grid -->
+                <div
+                  class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-slate-100 mt-2"
+                >
+                  <div class="flex items-center gap-3">
+                    <div
+                      class="w-10 h-10 rounded-lg bg-brand-50 flex items-center justify-center text-brand-600"
+                    >
+                      <svg
+                        class="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4.688 4.144l-1.99 4.4a2 2 0 01-3.396 0l-1.99-4.4m11.962 0l1.602 3.535a2 2 0 01-.264 2.15l-1.353 1.45A2 2 0 0115.86 19H8.14a2 2 0 01-1.527-.706l-1.353-1.45a2 2 0 01-.264-2.15l1.602-3.535M16 10a4 4 0 11-8 0 4 4 0 018 0z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <p
+                        class="text-xs text-slate-400 font-medium uppercase tracking-wider"
+                      >
+                        Current Role
+                      </p>
+                      <p class="text-sm font-semibold text-slate-800">
+                        Java Full Stack Developer
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <div
+                      class="w-10 h-10 rounded-lg bg-brand-50 flex items-center justify-center text-brand-600"
+                    >
+                      <svg
+                        class="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-5.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
+                        ></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <p
+                        class="text-xs text-slate-400 font-medium uppercase tracking-wider"
+                      >
+                        Education
+                      </p>
+                      <p class="text-sm font-semibold text-slate-800">
+                        Bachelor of Engineering (ENTC)
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Strengths Card (Right) -->
+            <div class="lg:col-span-5 flex flex-col gap-6">
+              <div
+                class="glass-card p-8 rounded-2xl shadow-premium border border-slate-100"
+              >
+                <h3 class="font-heading font-bold text-xl text-slate-900 mb-6">
+                  Key Professional Strengths
+                </h3>
+                <div class="flex flex-col gap-4">
+                  <!-- Strength item -->
+                  <div class="flex items-start gap-4">
+                    <span
+                      class="flex-shrink-0 w-8 h-8 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center font-bold text-sm"
+                      >1</span
+                    >
+                    <div>
+                      <h4 class="font-semibold text-slate-900 text-sm">
+                        Backend Architecture & Dev
+                      </h4>
+                      <p class="text-xs text-slate-500 mt-0.5">
+                        High availability application creation with Spring Boot
+                        and Java.
+                      </p>
+                    </div>
+                  </div>
+                  <!-- Strength item -->
+                  <div class="flex items-start gap-4">
+                    <span
+                      class="flex-shrink-0 w-8 h-8 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center font-bold text-sm"
+                      >2</span
+                    >
+                    <div>
+                      <h4 class="font-semibold text-slate-900 text-sm">
+                        RESTful Web Services
+                      </h4>
+                      <p class="text-xs text-slate-500 mt-0.5">
+                        Designing, constructing, and maintaining resilient APIs
+                        & schemas.
+                      </p>
+                    </div>
+                  </div>
+                  <!-- Strength item -->
+                  <div class="flex items-start gap-4">
+                    <span
+                      class="flex-shrink-0 w-8 h-8 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center font-bold text-sm"
+                      >3</span
+                    >
+                    <div>
+                      <h4 class="font-semibold text-slate-900 text-sm">
+                        Database Modeling & Management
+                      </h4>
+                      <p class="text-xs text-slate-500 mt-0.5">
+                        Entity relationship modeling, querying, and performance
+                        tuning.
+                      </p>
+                    </div>
+                  </div>
+                  <!-- Strength item -->
+                  <div class="flex items-start gap-4">
+                    <span
+                      class="flex-shrink-0 w-8 h-8 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center font-bold text-sm"
+                      >4</span
+                    >
+                    <div>
+                      <h4 class="font-semibold text-slate-900 text-sm">
+                        Structured Algorithmic Solves
+                      </h4>
+                      <p class="text-xs text-slate-500 mt-0.5">
+                        Solid analytical ability shown in robust problem
+                        solving.
+                      </p>
+                    </div>
+                  </div>
+                  <!-- Strength item -->
+                  <div class="flex items-start gap-4">
+                    <span
+                      class="flex-shrink-0 w-8 h-8 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center font-bold text-sm"
+                      >5</span
+                    >
+                    <div>
+                      <h4 class="font-semibold text-slate-900 text-sm">
+                        Distributed System Design
+                      </h4>
+                      <p class="text-xs text-slate-500 mt-0.5">
+                        Knowledge of modular architectures, security layers, and
+                        flow paths.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Skills Section -->
+      <section
+        id="skills"
+        class="py-24 bg-slate-50/50 border-b border-slate-100"
+      >
+        <div class="max-w-7xl mx-auto px-6">
+          <!-- Section Title -->
+          <div class="flex flex-col items-center text-center gap-2 mb-16">
+            <span
+              class="text-xs font-bold text-brand-600 tracking-widest uppercase"
+              >Expertise & Stack</span
+            >
+            <h2
+              class="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight"
+            >
+              Technical Skills
+            </h2>
+            <div class="w-12 h-1 bg-brand-600 rounded mt-2"></div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div
+              class="glass-card p-6 rounded-2xl border border-slate-100 shadow-premium hover:shadow-premium-hover transition-all duration-300"
+            >
+              <div
+                class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-5"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="font-heading font-bold text-lg text-slate-900 mb-4">
+                Languages
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-3 py-1.5 rounded-lg bg-white border border-slate-100 text-xs font-semibold text-slate-700"
+                  >Java</span
+                >
+                <span
+                  class="px-3 py-1.5 rounded-lg bg-white border border-slate-100 text-xs font-semibold text-slate-700"
+                  >C++</span
+                >
+                <span
+                  class="px-3 py-1.5 rounded-lg bg-white border border-slate-100 text-xs font-semibold text-slate-700"
+                  >JavaScript</span
+                >
+                <span
+                  class="px-3 py-1.5 rounded-lg bg-white border border-slate-100 text-xs font-semibold text-slate-700"
+                  >TypeScript</span
+                >
+                <span
+                  class="px-3 py-1.5 rounded-lg bg-white border border-slate-100 text-xs font-semibold text-slate-700"
+                  >HTML5</span
+                >
+                <span
+                  class="px-3 py-1.5 rounded-lg bg-white border border-slate-100 text-xs font-semibold text-slate-700"
+                  >CSS3</span
+                >
+              </div>
+            </div>
+
+            <div
+              class="glass-card p-6 rounded-2xl border border-slate-100 shadow-premium hover:shadow-premium-hover transition-all duration-300"
+            >
+              <div
+                class="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-5"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="font-heading font-bold text-lg text-slate-900 mb-4">
+                Backend
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-3 py-1.5 rounded-lg bg-white border border-slate-100 text-xs font-semibold text-slate-700"
+                  >Spring Boot</span
+                >
+                <span
+                  class="px-3 py-1.5 rounded-lg bg-white border border-slate-100 text-xs font-semibold text-slate-700"
+                  >Spring Security</span
+                >
+                <span
+                  class="px-3 py-1.5 rounded-lg bg-white border border-slate-100 text-xs font-semibold text-slate-700"
+                  >Hibernate</span
+                >
+                <span
+                  class="px-3 py-1.5 rounded-lg bg-white border border-slate-100 text-xs font-semibold text-slate-700"
+                  >REST APIs</span
+                >
+                <span
+                  class="px-3 py-1.5 rounded-lg bg-white border border-slate-100 text-xs font-semibold text-slate-700"
+                  >MySQL</span
+                >
+                <span
+                  class="px-3 py-1.5 rounded-lg bg-white border border-slate-100 text-xs font-semibold text-slate-700"
+                  >PostgreSQL</span
+                >
+              </div>
+            </div>
+
+            <div
+              class="glass-card p-6 rounded-2xl border border-slate-100 shadow-premium hover:shadow-premium-hover transition-all duration-300"
+            >
+              <div
+                class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-5"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="font-heading font-bold text-lg text-slate-900 mb-4">
+                Frontend
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-3 py-1.5 rounded-lg bg-white border border-slate-100 text-xs font-semibold text-slate-700"
+                  >React.js</span
+                >
+                <span
+                  class="px-3 py-1.5 rounded-lg bg-white border border-slate-100 text-xs font-semibold text-slate-700"
+                  >Redux</span
+                >
+                <span
+                  class="px-3 py-1.5 rounded-lg bg-white border border-slate-100 text-xs font-semibold text-slate-700"
+                  >Redux Toolkit</span
+                >
+                <span
+                  class="px-3 py-1.5 rounded-lg bg-white border border-slate-100 text-xs font-semibold text-slate-700"
+                  >Tailwind CSS</span
+                >
+              </div>
+            </div>
+
+            <div
+              class="glass-card p-6 rounded-2xl border border-slate-100 shadow-premium hover:shadow-premium-hover transition-all duration-300"
+            >
+              <div
+                class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center mb-5"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+                  ></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+              </div>
+              <h3 class="font-heading font-bold text-lg text-slate-900 mb-4">
+                Dev Tools
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-3 py-1.5 rounded-lg bg-white border border-slate-100 text-xs font-semibold text-slate-700"
+                  >Visual Studio Code</span
+                >
+                <span
+                  class="px-3 py-1.5 rounded-lg bg-white border border-slate-100 text-xs font-semibold text-slate-700"
+                  >Git</span
+                >
+                <span
+                  class="px-3 py-1.5 rounded-lg bg-white border border-slate-100 text-xs font-semibold text-slate-700"
+                  >GitHub</span
+                >
+                <span
+                  class="px-3 py-1.5 rounded-lg bg-white border border-slate-100 text-xs font-semibold text-slate-700"
+                  >IntelliJ IDEA</span
+                >
+                <span
+                  class="px-3 py-1.5 rounded-lg bg-white border border-slate-100 text-xs font-semibold text-slate-700"
+                  >Postman</span
+                >
+                <span
+                  class="px-3 py-1.5 rounded-lg bg-white border border-slate-100 text-xs font-semibold text-slate-700"
+                  >Bruno</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Experience Timeline -->
+      <section id="experience" class="py-24 bg-white border-b border-slate-100">
+        <div class="max-w-4xl mx-auto px-6">
+          <!-- Section Title -->
+          <div class="flex flex-col items-center text-center gap-2 mb-16">
+            <span
+              class="text-xs font-bold text-brand-600 tracking-widest uppercase"
+              >Career History</span
+            >
+            <h2
+              class="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight"
+            >
+              Professional Experience
+            </h2>
+            <div class="w-12 h-1 bg-brand-600 rounded mt-2"></div>
+          </div>
+
+          <!-- Vertical Timeline -->
+          <div
+            class="relative border-l-2 border-slate-200 pl-8 ml-4 sm:ml-6 flex flex-col gap-12"
+          >
+            <div class="relative">
+              <span
+                class="absolute -left-[41px] top-1.5 bg-brand-600 border-4 border-brand-100 rounded-full w-5 h-5 flex items-center justify-center shadow-md"
+              ></span>
+
+              <div
+                class="glass-card p-6 sm:p-8 rounded-2xl border border-slate-100 shadow-premium flex flex-col gap-4"
+              >
+                <div class="flex flex-wrap items-start justify-between gap-2">
+                  <div>
+                    <h3
+                      class="font-heading font-bold text-lg sm:text-xl text-slate-900"
+                    >
+                      Senior Software Engineer
+                    </h3>
+                    <p class="text-sm text-slate-500 font-medium mt-0.5">
+                      Capgemini
+                    </p>
+                  </div>
+                  <div class="flex flex-col sm:items-end">
+                    <span
+                      class="px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-xs font-bold text-slate-700"
+                      >September 2026 - Present</span
+                    >
+                    <span class="text-xs font-semibold text-brand-600 mt-1"
+                      >Pune, Maharashtra, India</span
+                    >
+                  </div>
+                </div>
+
+                <ul class="flex flex-col gap-2.5 text-slate-600 text-sm mt-2">
+                  <li class="flex items-start gap-2.5">
+                    <svg
+                      class="w-4 h-4 mt-0.5 text-brand-600 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="3"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M5 13l4 4L19 7"
+                      ></path>
+                    </svg>
+                    <span
+                      >Developed and enhanced secure REST APIs using Java,
+                      Spring Boot, and Spring Security for personalization and
+                      configuration workflows, reducing manual support requests
+                      by 25%.</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <svg
+                      class="w-4 h-4 mt-0.5 text-brand-600 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="3"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M5 13l4 4L19 7"
+                      ></path>
+                    </svg>
+                    <span
+                      >Improved scalable backend service logic for high-traffic
+                      read operations, reducing average response time by
+                      25%.</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <svg
+                      class="w-4 h-4 mt-0.5 text-brand-600 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="3"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M5 13l4 4L19 7"
+                      ></path>
+                    </svg>
+                    <span
+                      >Improved scalable backend service logic for high-traffic
+                      read operations, reducing average response time by 25% by
+                      optimizing database queries and implementing concurrency
+                      improvements.</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <svg
+                      class="w-4 h-4 mt-0.5 text-brand-600 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="3"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M5 13l4 4L19 7"
+                      ></path>
+                    </svg>
+                    <span
+                      >Built and maintained React-based web applications with
+                      TypeScript and Redux, improving user experience and
+                      reducing page load times by 20%.</span
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="relative">
+              <span
+                class="absolute -left-[41px] top-1.5 bg-slate-300 border-4 border-slate-100 rounded-full w-5 h-5 flex items-center justify-center shadow-md"
+              ></span>
+
+              <div
+                class="glass-card p-6 sm:p-8 rounded-2xl border border-slate-100 shadow-premium flex flex-col gap-4"
+              >
+                <div class="flex flex-wrap items-start justify-between gap-2">
+                  <div>
+                    <h3
+                      class="font-heading font-bold text-lg sm:text-xl text-slate-900"
+                    >
+                      Software Engineer
+                    </h3>
+                    <p class="text-sm text-slate-500 font-medium mt-0.5">
+                      Capgemini
+                    </p>
+                  </div>
+                  <div class="flex flex-col sm:items-end">
+                    <span
+                      class="px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-xs font-bold text-slate-700"
+                      >September 2024 - August 2026</span
+                    >
+                    <span class="text-xs font-semibold text-brand-600 mt-1"
+                      >Pune, Maharashtra, India</span
+                    >
+                  </div>
+                </div>
+
+                <ul class="flex flex-col gap-2.5 text-slate-600 text-sm mt-2">
+                  <li class="flex items-start gap-2.5">
+                    <svg
+                      class="w-4 h-4 mt-0.5 text-brand-600 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="3"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M5 13l4 4L19 7"
+                      ></path>
+                    </svg>
+                    <span
+                      >Implemented request validation and centralized exception
+                      handling, reducing production defects related to invalid
+                      inputs by 30%.</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <svg
+                      class="w-4 h-4 mt-0.5 text-brand-600 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="3"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M5 13l4 4L19 7"
+                      ></path>
+                    </svg>
+                    <span
+                      >Improved frontend performance through code splitting,
+                      lazy loading, and rendering optimizations, increasing Core
+                      Web Vitals score from 62 to 86.</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <svg
+                      class="w-4 h-4 mt-0.5 text-brand-600 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="3"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M5 13l4 4L19 7"
+                      ></path>
+                    </svg>
+                    <span
+                      >Built and shipped reusable React components using
+                      TypeScript and Redux, reducing feature development time by
+                      35%.</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <svg
+                      class="w-4 h-4 mt-0.5 text-brand-600 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="3"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M5 13l4 4L19 7"
+                      ></path>
+                    </svg>
+                    <span
+                      >Strengthened UI quality by implementing Jest and React
+                      Testing Library test suites with 80% test coverage,
+                      reducing frontend defects by 35%.</span
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- 6. Achievements / Metrics Dashboard -->
+      <section
+        id="achievements"
+        class="py-24 bg-white border-b border-slate-100"
+      >
+        <div class="max-w-7xl mx-auto px-6">
+          <!-- Section Title -->
+          <div class="flex flex-col items-center text-center gap-2 mb-16">
+            <span
+              class="text-xs font-bold text-brand-600 tracking-widest uppercase"
+              >Metrics & Success</span
+            >
+            <h2
+              class="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight"
+            >
+              Key Achievements
+            </h2>
+            <div class="w-12 h-1 bg-brand-600 rounded mt-2"></div>
+          </div>
+
+          <!-- Dashboard Statistics Grid -->
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Metric Card 1 -->
+            <div
+              class="glass-card p-6 sm:p-8 rounded-2xl border border-slate-100 shadow-premium flex flex-col items-center text-center gap-2 group hover:-translate-y-1 transition-all duration-300"
+            >
+              <div
+                class="w-12 h-12 rounded-xl bg-blue-50 text-brand-600 flex items-center justify-center mb-1"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                  ></path>
+                </svg>
+              </div>
+              <span
+                class="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight"
+                >2+</span
+              >
+              <span class="text-xs sm:text-sm font-semibold text-slate-500"
+                >Years Experience</span
+              >
+            </div>
+
+            <!-- Metric Card 2 -->
+            <div
+              class="glass-card p-6 sm:p-8 rounded-2xl border border-slate-100 shadow-premium flex flex-col items-center text-center gap-2 group hover:-translate-y-1 transition-all duration-300"
+            >
+              <div
+                class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center mb-1"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                  ></path>
+                </svg>
+              </div>
+              <span
+                class="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight"
+                >200+</span
+              >
+              <span class="text-xs sm:text-sm font-semibold text-slate-500"
+                >Coding Solves</span
+              >
+            </div>
+
+            <!-- Metric Card 4 -->
+            <div
+              class="glass-card p-6 sm:p-8 rounded-2xl border border-slate-100 shadow-premium flex flex-col items-center text-center gap-2 group hover:-translate-y-1 transition-all duration-300"
+            >
+              <div
+                class="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center mb-1"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-5.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
+                  ></path>
+                </svg>
+              </div>
+              <span
+                class="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight"
+                >9.0</span
+              >
+              <span class="text-xs sm:text-sm font-semibold text-slate-500"
+                >CGPA Achieved</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. Education Section -->
+      <section
+        id="education"
+        class="py-24 bg-slate-50/50 border-b border-slate-100"
+      >
+        <div class="max-w-4xl mx-auto px-6">
+          <!-- Section Title -->
+          <div class="flex flex-col items-center text-center gap-2 mb-16">
+            <span
+              class="text-xs font-bold text-brand-600 tracking-widest uppercase"
+              >Academic Background</span
+            >
+            <h2
+              class="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight"
+            >
+              Education Details
+            </h2>
+            <div class="w-12 h-1 bg-brand-600 rounded mt-2"></div>
+          </div>
+
+          <div
+            class="glass-card p-6 sm:p-10 rounded-2xl border border-slate-100 shadow-premium flex flex-col sm:flex-row items-start gap-6 sm:gap-8 hover:-translate-y-0.5 transition-all duration-300"
+          >
+            <div
+              class="w-14 h-14 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0"
+            >
+              <svg
+                class="w-7 h-7"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-5.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
+                ></path>
+              </svg>
+            </div>
+
+            <div class="flex-grow flex flex-col gap-4">
+              <div class="flex flex-wrap items-start justify-between gap-2">
+                <div>
+                  <h3 class="font-heading font-bold text-xl text-slate-900">
+                    Savitribai Phule Pune University
+                  </h3>
+                  <p class="text-sm font-semibold text-brand-600 mt-1">
+                    Bachelor of Engineering in Electronics and Telecommunication
+                  </p>
+                </div>
+                <span
+                  class="px-3.5 py-1 rounded-full bg-slate-100 border border-slate-200 text-xs font-bold text-slate-700"
+                  >August 2021 - July 2024</span
+                >
+              </div>
+
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Pune, Maharashtra, India
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="glass-card p-6 sm:p-10 rounded-2xl border border-slate-100 shadow-premium flex flex-col sm:flex-row items-start gap-6 sm:gap-8 hover:-translate-y-0.5 transition-all duration-300 mt-8"
+          >
+            <div
+              class="w-14 h-14 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0"
+            >
+              <svg
+                class="w-7 h-7"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-5.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
+                ></path>
+              </svg>
+            </div>
+
+            <div class="flex-grow flex flex-col gap-4">
+              <div class="flex flex-wrap items-start justify-between gap-2">
+                <div>
+                  <h3 class="font-heading font-bold text-xl text-slate-900">
+                    Government Polytechnic Aurangabad
+                  </h3>
+                  <p class="text-sm font-semibold text-brand-600 mt-1">
+                    Diploma in Electronics and Telecommunication
+                  </p>
+                </div>
+                <span
+                  class="px-3.5 py-1 rounded-full bg-slate-100 border border-slate-200 text-xs font-bold text-slate-700"
+                  >July 2018 - June 2021</span
+                >
+              </div>
+
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Aurangabad, Maharashtra, India
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. Contact Section -->
+      <section id="contact" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+          <!-- Section Title -->
+          <div class="flex flex-col items-center text-center gap-2 mb-16">
+            <span
+              class="text-xs font-bold text-brand-600 tracking-widest uppercase"
+              >Get In Touch</span
+            >
+            <h2
+              class="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight"
+            >
+              Contact Me
+            </h2>
+            <div class="w-12 h-1 bg-brand-600 rounded mt-2"></div>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+            <!-- Contact Info -->
+            <div class="lg:col-span-12 flex flex-col gap-6 justify-center">
+              <div
+                class="glass-card p-8 rounded-2xl border border-slate-100 shadow-premium h-full flex flex-col justify-center"
+              >
+                <h3 class="font-heading font-bold text-xl text-slate-900 mb-6">
+                  Contact Information
+                </h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div class="flex items-center gap-4 p-4 rounded-xl border border-slate-100 bg-slate-50/60">
+                    <div
+                      class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0"
+                    >
+                      <svg
+                        class="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <p
+                        class="text-[10px] text-slate-400 font-bold uppercase tracking-wider"
+                      >
+                        Email Me
+                      </p>
+                      <a
+                        href="mailto:akashfasate2001@gmail.com"
+                        class="text-sm font-semibold text-slate-800 hover:text-brand-600 transition-colors"
+                        >akashfasate2001@gmail.com</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="flex items-center gap-4 p-4 rounded-xl border border-slate-100 bg-slate-50/60">
+                    <div
+                      class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0"
+                    >
+                      <svg
+                        class="w-5 h-5"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                        />
+                      </svg>
+                    </div>
+                    <div>
+                      <p
+                        class="text-[10px] text-slate-400 font-bold uppercase tracking-wider"
+                      >
+                        LinkedIn
+                      </p>
+                      <a
+                        href="https://www.linkedin.com/in/akash-fasate"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-sm font-semibold text-slate-800 hover:text-brand-600 transition-colors"
+                        >linkedin.com/in/akash-fasate</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="flex items-center gap-4 p-4 rounded-xl border border-slate-100 bg-slate-50/60">
+                    <div
+                      class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0"
+                    >
+                      <svg
+                        class="w-5 h-5"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.483 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.162 22 16.418 22 12c0-5.523-4.477-10-10-10z"
+                        />
+                      </svg>
+                    </div>
+                    <div>
+                      <p
+                        class="text-[10px] text-slate-400 font-bold uppercase tracking-wider"
+                      >
+                        GitHub
+                      </p>
+                      <a
+                        href="https://github.com/AkashFasate2001"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-sm font-semibold text-slate-800 hover:text-brand-600 transition-colors"
+                        >github.com/AkashFasate2001</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="flex items-center gap-4 p-4 rounded-xl border border-slate-100 bg-slate-50/60">
+                    <div
+                      class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0"
+                    >
+                      <svg
+                        class="w-5 h-5"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M13.483 0a1.374 1.374 0 00-.961.411L7.11 5.826a1.374 1.374 0 00-.011 1.942l.011.011a1.374 1.374 0 001.942-.011L13.483 3.3a.275.275 0 01.389 0l7.35 7.35a2.747 2.747 0 010 3.885l-4.502 4.502a.275.275 0 01-.389 0l-4.215-4.215a1.374 1.374 0 00-1.942 0l-.011.011a1.374 1.374 0 000 1.942l4.215 4.215a2.747 2.747 0 003.885 0l4.502-4.502a5.494 5.494 0 000-7.77l-7.35-7.35A1.374 1.374 0 0013.483 0zM4.145 10.377a2.747 2.747 0 00-3.885 0 2.747 2.747 0 000 3.885l4.502 4.502a1.374 1.374 0 001.942 0l.011-.011a1.374 1.374 0 000-1.942l-4.502-4.502a.275.275 0 010-.389z"
+                        />
+                      </svg>
+                    </div>
+                    <div>
+                      <p
+                        class="text-[10px] text-slate-400 font-bold uppercase tracking-wider"
+                      >
+                        LeetCode
+                      </p>
+                      <a
+                        href="https://leetcode.com/akashfasate/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-sm font-semibold text-slate-800 hover:text-brand-600 transition-colors"
+                        >leetcode.com/akashfasate</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 9. Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-16 border-t border-slate-800">
+      <div
+        class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-8 items-center"
+      >
+        <!-- Branding Left -->
+        <div class="md:col-span-5 flex flex-col gap-3">
+          <div class="flex items-center gap-2.5">
+            <div
+              class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center text-white font-heading font-extrabold text-sm"
+            >
+              A
+            </div>
+            <span
+              class="font-heading font-bold text-white tracking-tight text-md"
+              >Akash Fasate</span
+            >
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div
+          class="md:col-span-4 flex flex-wrap gap-x-6 gap-y-2 justify-start md:justify-center text-sm font-medium"
+        >
+          <a href="#about" class="hover:text-white transition-colors">About</a>
+          <a href="#skills" class="hover:text-white transition-colors"
+            >Skills</a
+          >
+          <a href="#experience" class="hover:text-white transition-colors"
+            >Experience</a
+          >
+          <a href="#contact" class="hover:text-white transition-colors"
+            >Contact</a
+          >
+        </div>
+
+        <!-- Social Media Right -->
+        <div class="md:col-span-3 flex justify-start md:justify-end gap-4">
+          <a
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white transition-all"
+            aria-label="LinkedIn"
+          >
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://github.com/AkashFasate2001"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white transition-all"
+            aria-label="GitHub"
+          >
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.483 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.162 22 16.418 22 12c0-5.523-4.477-10-10-10z"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div
+        class="max-w-7xl mx-auto px-6 border-t border-slate-800/60 mt-12 pt-6 flex flex-wrap items-center justify-between gap-4 text-xs"
+      >
+        <p>&copy; 2026 Akash Fasate. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Global Feedback Toast Notifications -->
+    <div
+      id="toast-container"
+      class="fixed bottom-6 right-6 z-50 flex flex-col gap-3 max-w-sm w-full pointer-events-none"
+    ></div>
+
+    <!-- Script Section: Handle interactions smoothly -->
+    <script>
+      // Header shadow on scroll
+      const header = document.getElementById("main-header");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 40) {
+          header.classList.add("shadow-premium", "border-slate-100");
+          header.classList.remove("border-transparent");
+        } else {
+          header.classList.remove("shadow-premium", "border-slate-100");
+          header.classList.add("border-transparent");
+        }
+      });
+
+      // Mobile drawer toggling
+      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuIcon = document.getElementById("menu-icon");
+
+      mobileMenuBtn.addEventListener("click", () => {
+        const isHidden = mobileMenu.classList.contains("hidden");
+        if (isHidden) {
+          mobileMenu.classList.remove("hidden");
+          // Change icon to close
+          menuIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>`;
+        } else {
+          mobileMenu.classList.add("hidden");
+          // Change icon to hamburger
+          menuIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>`;
+        }
+      });
+
+      // Close mobile drawer when link clicked
+      document.querySelectorAll(".mobile-link").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+          menuIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>`;
+        });
+      });
+
+      // Customizable Custom Toast System
+      function showToast(message, type = "success") {
+        const container = document.getElementById("toast-container");
+        const toast = document.createElement("div");
+
+        // Layout config
+        toast.className =
+          "flex items-center gap-3 p-4 rounded-xl bg-white border shadow-xl translate-y-2 opacity-0 transition-all duration-300 pointer-events-auto";
+
+        let iconColor = "text-brand-500";
+        let bgLight = "bg-brand-50";
+        let iconSvg = `<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`; // Info fallback
+
+        if (type === "success") {
+          iconColor = "text-emerald-500";
+          bgLight = "bg-emerald-50";
+          toast.classList.add("border-emerald-100");
+          iconSvg = `<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`;
+        } else {
+          toast.classList.add("border-brand-100");
+        }
+
+        toast.innerHTML = `
+                <div class="w-8 h-8 rounded-lg ${bgLight} ${iconColor} flex items-center justify-center flex-shrink-0">
+                    ${iconSvg}
+                </div>
+                <p class="text-xs font-semibold text-slate-800 leading-snug">${message}</p>
+            `;
+
+        container.appendChild(toast);
+
+        // Animate In
+        setTimeout(() => {
+          toast.classList.remove("translate-y-2", "opacity-0");
+        }, 10);
+
+        // Auto Dismiss
+        setTimeout(() => {
+          toast.classList.add("opacity-0", "translate-y-[-10px]");
+          setTimeout(() => {
+            toast.remove();
+          }, 300);
+        }, 4000);
+      }
+    </script>
+  </body>
+</html>
